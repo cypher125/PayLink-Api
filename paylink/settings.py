@@ -52,8 +52,11 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # corsheader
     'corsheaders.middleware.CorsMiddleware',
+    # end
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -200,7 +203,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 # VTPass API Configuration
-VTPASS_API_KEY = os.environ.get('VTPASS_API_KEY', 'e7f016d75cf26172c015d4736627586a')
-VTPASS_PUBLIC_KEY = os.environ.get('VTPASS_PUBLIC_KEY', 'PK_35770f407d304279ec8c0d07828d987a3589ce7cf18')
-VTPASS_SECRET_KEY = os.environ.get('VTPASS_SECRET_KEY', 'SK_453cdba099b4d75aba7d55a44f46b6f915be97e1591')
+VTPASS_API_KEY = os.environ.get('VTPASS_API_KEY')
+VTPASS_PUBLIC_KEY = os.environ.get('VTPASS_PUBLIC_KEY')
+VTPASS_SECRET_KEY = os.environ.get('VTPASS_SECRET_KEY')
 VTPASS_BASE_URL = 'https://sandbox.vtpass.com/api'  # Sandbox URL
